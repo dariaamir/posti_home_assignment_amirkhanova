@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20240126 01:25:20.807" rpa="false" schemaversion="4">
+<suite id="s1" name="Add Stamps Into Cart And Checkout" source="C:\Users\david\PycharmProjects\posti_home_assignment_amirkhanova\tests\add_stamps_into_cart_and_checkout.robot">
+<test id="s1-t1" name="Add stamps into cart and checkout" line="20">
+<kw name="Browser Setup" library="setup" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240126 01:25:20.953" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20240126 01:25:20.953" endtime="20240126 01:25:22.405"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240126 01:25:22.405" endtime="20240126 01:25:22.528"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>${wait_timeout}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240126 01:25:22.528" endtime="20240126 01:25:22.533"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:20.953" endtime="20240126 01:25:22.533"/>
+</kw>
+<kw name="Navigate to Home Page" library="home_page">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${home_page_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240126 01:25:22.534" level="INFO">Opening url 'https://www.posti.fi/en'</msg>
+<status status="PASS" starttime="20240126 01:25:22.534" endtime="20240126 01:25:24.042"/>
+</kw>
+<kw name="Accept Cookies" library="cookies_alert_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${cookies_alert}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240126 01:25:24.743" level="INFO">Element 'css:div[role="alertdialog"]' is displayed.</msg>
+<status status="PASS" starttime="20240126 01:25:24.042" endtime="20240126 01:25:24.743"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${accept_all_cookies_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240126 01:25:24.743" level="INFO">Clicking button 'id:onetrust-accept-btn-handler'.</msg>
+<status status="PASS" starttime="20240126 01:25:24.743" endtime="20240126 01:25:24.804"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${cookies_alert}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20240126 01:25:24.804" endtime="20240126 01:25:25.277"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:24.042" endtime="20240126 01:25:25.277"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:22.533" endtime="20240126 01:25:25.277"/>
+</kw>
+<kw name="Check that Send Letters With Postcards Section Is Present" library="home_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${send_letters_and_products_with_stamps_css}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240126 01:25:25.290" level="INFO">Element 'css:div[id="send-letters-and-postcards-with-stamps"]' is displayed.</msg>
+<status status="PASS" starttime="20240126 01:25:25.278" endtime="20240126 01:25:25.290"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${send_letters_and_products_with_stamps_text_header_css}</arg>
+<arg>${send_letters_and_products_with_stamps_text}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240126 01:25:25.290" level="INFO">Verifying element 'css:div[id="send-letters-and-postcards-with-stamps"] h2' contains exact text 'Send letters and postcards with stamps'.</msg>
+<status status="PASS" starttime="20240126 01:25:25.290" endtime="20240126 01:25:25.302"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:25.277" endtime="20240126 01:25:25.304"/>
+</kw>
+<kw name="Navigate to Stamps Page" library="home_page">
+<kw name="Click All Stamps Button" library="home_page">
+<kw name="Scroll To Element" library="utils">
+<arg>${all_stamps_and_envelopers_from_the_online_store_button_by}[0]</arg>
+<arg>${all_stamps_and_envelopers_from_the_online_store_button_by}[1]</arg>
+<status status="PASS" starttime="20240126 01:25:25.304" endtime="20240126 01:25:25.313"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240126 01:25:27.315" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240126 01:25:25.314" endtime="20240126 01:25:27.315"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${all_stamps_and_envelopers_from_the_online_store_button_css}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240126 01:25:27.315" level="INFO">Clicking button 'css:div[id="send-letters-and-postcards-with-stamps"] button'.</msg>
+<status status="PASS" starttime="20240126 01:25:27.315" endtime="20240126 01:25:27.404"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:25.304" endtime="20240126 01:25:27.404"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240126 01:25:29.404" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240126 01:25:27.404" endtime="20240126 01:25:29.404"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>locator=NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20240126 01:25:29.404" endtime="20240126 01:25:29.418"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Stamps</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20240126 01:25:29.418" level="INFO">Page title is 'Stamps'.</msg>
+<status status="PASS" starttime="20240126 01:25:29.418" endtime="20240126 01:25:29.418"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:25.304" endtime="20240126 01:25:29.418"/>
+</kw>
+<kw name="Navigate to Letters and Stamps with E-Value" library="stamps_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${letters_and_cards_with_e_value_menu_item_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:25:29.433" level="INFO">Clicking element 'xpath://a[text()="For letters and cards with €-value"]'.</msg>
+<status status="PASS" starttime="20240126 01:25:29.433" endtime="20240126 01:25:29.497"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${page_title_xpath}</arg>
+<arg>${letters_and_cards_with_e_value}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20240126 01:25:29.497" endtime="20240126 01:25:30.581"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:29.418" endtime="20240126 01:25:30.581"/>
+</kw>
+<kw name="Add Stamps To Cart" library="stamps_page">
+<var>${stamp_titles}</var>
+<var>${stamp_prices}</var>
+<arg>${stamps_count}</arg>
+<doc>Adds desired number of items into the cart and returns their titles and prices as 2 lists</doc>
+<msg timestamp="20240126 01:25:47.444" level="INFO">${stamp_titles} = ['Water 0,05€', 'Arktika 0,10€', 'Arktika 0,20€']</msg>
+<msg timestamp="20240126 01:25:47.444" level="INFO">${stamp_prices} = ['0.75 €', '1.50 €', '3.00 €']</msg>
+<status status="PASS" starttime="20240126 01:25:30.581" endtime="20240126 01:25:47.444"/>
+</kw>
+<kw name="Get Number Of Items In The Cart" library="stamps_page">
+<var>${number_of_items}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${number_of_items}</var>
+<arg>${cart_quantity_css}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:25:47.451" level="INFO">${number_of_items} = 3</msg>
+<status status="PASS" starttime="20240126 01:25:47.444" endtime="20240126 01:25:47.451"/>
+</kw>
+<msg timestamp="20240126 01:25:47.465" level="INFO">${number_of_items} = 3</msg>
+<status status="PASS" starttime="20240126 01:25:47.444" endtime="20240126 01:25:47.465"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${number_of_items}</arg>
+<arg>${stamps_count}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20240126 01:25:47.465" endtime="20240126 01:25:47.465"/>
+</kw>
+<kw name="Navigate to the Cart" library="stamps_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_css}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:25:47.465" level="INFO">Clicking element 'css:a[data-testid="cart-button"]'.</msg>
+<status status="PASS" starttime="20240126 01:25:47.465" endtime="20240126 01:25:47.520"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${cart_page_title_id}</arg>
+<arg>${cart_page_title}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20240126 01:25:47.520" endtime="20240126 01:25:47.706"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${checkout_button_css}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240126 01:25:47.706" endtime="20240126 01:25:48.193"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:47.465" endtime="20240126 01:25:48.193"/>
+</kw>
+<kw name="Check Items in the Cart" library="cart_page">
+<arg>${stamp_titles}</arg>
+<arg>${stamp_prices}</arg>
+<doc>Checks, that all items, that were added to the cart, are correctly displayed there</doc>
+<status status="PASS" starttime="20240126 01:25:48.193" endtime="20240126 01:25:48.270"/>
+</kw>
+<kw name="Check Total in the Cart" library="cart_page">
+<arg>${stamp_prices}</arg>
+<doc>Checks, that subtotal, delivery and total prices are calculated correctly</doc>
+<status status="PASS" starttime="20240126 01:25:48.270" endtime="20240126 01:25:48.301"/>
+</kw>
+<kw name="Go Back" library="setup">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240126 01:25:48.301" level="INFO">Executing JavaScript:
+history.back()
+Without any arguments.</msg>
+<status status="PASS" starttime="20240126 01:25:48.301" endtime="20240126 01:25:48.379"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:48.301" endtime="20240126 01:25:48.379"/>
+</kw>
+<kw name="Go Back" library="setup">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240126 01:25:48.380" level="INFO">Executing JavaScript:
+history.back()
+Without any arguments.</msg>
+<status status="PASS" starttime="20240126 01:25:48.380" endtime="20240126 01:25:48.483"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:48.379" endtime="20240126 01:25:48.483"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240126 01:25:49.483" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240126 01:25:48.483" endtime="20240126 01:25:49.483"/>
+</kw>
+<kw name="Add Stamps To Cart" library="stamps_page">
+<var>${adittional_stamp_titles}</var>
+<var>${adittional_stamp_prices}</var>
+<arg>${adittional_stamps_count}</arg>
+<doc>Adds desired number of items into the cart and returns their titles and prices as 2 lists</doc>
+<msg timestamp="20240126 01:26:05.332" level="INFO">${adittional_stamp_titles} = ['Blossoming Friendship']</msg>
+<msg timestamp="20240126 01:26:05.332" level="INFO">${adittional_stamp_prices} = ['23.00 €']</msg>
+<status status="PASS" starttime="20240126 01:25:49.483" endtime="20240126 01:26:05.332"/>
+</kw>
+<kw name="Get Number Of Items In The Cart" library="stamps_page">
+<var>${number_of_items}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${number_of_items}</var>
+<arg>${cart_quantity_css}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:05.348" level="INFO">${number_of_items} = 4</msg>
+<status status="PASS" starttime="20240126 01:26:05.332" endtime="20240126 01:26:05.348"/>
+</kw>
+<msg timestamp="20240126 01:26:05.348" level="INFO">${number_of_items} = 4</msg>
+<status status="PASS" starttime="20240126 01:26:05.332" endtime="20240126 01:26:05.348"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${number_of_items}</arg>
+<arg>${total_stamps_count}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<msg timestamp="20240126 01:26:05.348" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20240126 01:26:05.348" endtime="20240126 01:26:05.348"/>
+</kw>
+<kw name="Combine Lists" library="Collections">
+<var>${stamp_titles}</var>
+<arg>${stamp_titles}</arg>
+<arg>${adittional_stamp_titles}</arg>
+<doc>Combines the given ``lists`` together and returns the result.</doc>
+<msg timestamp="20240126 01:26:05.348" level="INFO">${stamp_titles} = ['Water 0,05€', 'Arktika 0,10€', 'Arktika 0,20€', 'Blossoming Friendship']</msg>
+<status status="PASS" starttime="20240126 01:26:05.348" endtime="20240126 01:26:05.348"/>
+</kw>
+<kw name="Combine Lists" library="Collections">
+<var>${stamp_prices}</var>
+<arg>${stamp_prices}</arg>
+<arg>${adittional_stamp_prices}</arg>
+<doc>Combines the given ``lists`` together and returns the result.</doc>
+<msg timestamp="20240126 01:26:05.348" level="INFO">${stamp_prices} = ['0.75 €', '1.50 €', '3.00 €', '23.00 €']</msg>
+<status status="PASS" starttime="20240126 01:26:05.348" endtime="20240126 01:26:05.348"/>
+</kw>
+<kw name="Navigate to the Cart" library="stamps_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cart_button_css}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:05.348" level="INFO">Clicking element 'css:a[data-testid="cart-button"]'.</msg>
+<status status="PASS" starttime="20240126 01:26:05.348" endtime="20240126 01:26:05.411"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${cart_page_title_id}</arg>
+<arg>${cart_page_title}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20240126 01:26:05.411" endtime="20240126 01:26:05.597"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${checkout_button_css}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240126 01:26:05.597" endtime="20240126 01:26:06.075"/>
+</kw>
+<status status="PASS" starttime="20240126 01:26:05.348" endtime="20240126 01:26:06.075"/>
+</kw>
+<kw name="Check Items in the Cart" library="cart_page">
+<arg>${stamp_titles}</arg>
+<arg>${stamp_prices}</arg>
+<doc>Checks, that all items, that were added to the cart, are correctly displayed there</doc>
+<status status="PASS" starttime="20240126 01:26:06.075" endtime="20240126 01:26:06.175"/>
+</kw>
+<kw name="Check Total in the Cart" library="cart_page">
+<arg>${stamp_prices}</arg>
+<doc>Checks, that subtotal, delivery and total prices are calculated correctly</doc>
+<status status="PASS" starttime="20240126 01:26:06.175" endtime="20240126 01:26:06.219"/>
+</kw>
+<kw name="Continue to Checkout" library="cart_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkout_button_css}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:06.219" level="INFO">Clicking element 'css:button[data-testid="checkout"]'.</msg>
+<status status="PASS" starttime="20240126 01:26:06.219" endtime="20240126 01:26:06.254"/>
+</kw>
+<status status="PASS" starttime="20240126 01:26:06.219" endtime="20240126 01:26:06.254"/>
+</kw>
+<kw name="Fill Up User Information" library="checkout_page">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${first_name_field_id}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240126 01:26:06.254" endtime="20240126 01:26:06.554"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${first_name_field_id}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:06.554" level="INFO">Typing text 'John' into text field 'id:billing-firstname-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:06.554" endtime="20240126 01:26:06.683"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${last_name_field_id}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:06.684" level="INFO">Typing text 'Smith' into text field 'id:billing-lastname-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:06.683" endtime="20240126 01:26:06.835"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${address_click_css}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:06.835" level="INFO">Clicking element 'css:div[class*="select__control"]'.</msg>
+<status status="PASS" starttime="20240126 01:26:06.835" endtime="20240126 01:26:06.911"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${address_css}</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:06.911" level="INFO">Typing text 'Ale' into text field 'css:div[class*="select__input-container"] input'.</msg>
+<status status="PASS" starttime="20240126 01:26:06.911" endtime="20240126 01:26:07.010"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240126 01:26:08.011" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240126 01:26:07.010" endtime="20240126 01:26:08.011"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${address_css}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240126 01:26:08.011" level="INFO">Sending key(s) ('RETURN',) to css:div[class*="select__input-container"] input element.</msg>
+<msg timestamp="20240126 01:26:08.357" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20240126 01:26:08.357" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20240126 01:26:08.011" endtime="20240126 01:26:08.383"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${phone_id}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:08.383" level="INFO">Typing text '12345678' into text field 'id:billing-telephone-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:08.383" endtime="20240126 01:26:08.560"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_id}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:08.560" level="INFO">Typing text 'test@test.com' into text field 'id:billing-email-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:08.560" endtime="20240126 01:26:08.776"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240126 01:26:10.779" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240126 01:26:08.776" endtime="20240126 01:26:10.779"/>
+</kw>
+<status status="PASS" starttime="20240126 01:26:06.254" endtime="20240126 01:26:10.779"/>
+</kw>
+<kw name="Check Postcode Validation Field" library="checkout_page">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${postcode_id}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240126 01:26:10.779" endtime="20240126 01:26:10.846"/>
+</kw>
+<kw name="Assert Postcode is Invalid Message" library="checkout_page">
+<status status="PASS" starttime="20240126 01:26:10.846" endtime="20240126 01:26:10.883"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${postcode_id}</arg>
+<arg>${postcode_less_than_5_numbers}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:10.883" level="INFO">Typing text '123' into text field 'id:billing-postcode-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:10.883" endtime="20240126 01:26:11.012"/>
+</kw>
+<kw name="Assert Postcode is Invalid Message" library="checkout_page">
+<status status="PASS" starttime="20240126 01:26:11.012" endtime="20240126 01:26:11.027"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${postcode_id}</arg>
+<arg>${postcode_more_than_5_numbers}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:11.027" level="INFO">Typing text '123456' into text field 'id:billing-postcode-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:11.027" endtime="20240126 01:26:11.188"/>
+</kw>
+<kw name="Assert Postcode is Invalid Message" library="checkout_page">
+<status status="PASS" starttime="20240126 01:26:11.188" endtime="20240126 01:26:11.210"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${postcode_id}</arg>
+<arg>${postcode_numbers_and_letters}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:11.210" level="INFO">Typing text '123ab' into text field 'id:billing-postcode-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:11.210" endtime="20240126 01:26:11.317"/>
+</kw>
+<kw name="Assert Postcode is Invalid Message" library="checkout_page">
+<status status="PASS" starttime="20240126 01:26:11.317" endtime="20240126 01:26:11.337"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${postcode_id}</arg>
+<arg>${postcode_numbers_and_symbols}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:11.337" level="INFO">Typing text '1234!' into text field 'id:billing-postcode-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:11.337" endtime="20240126 01:26:11.447"/>
+</kw>
+<kw name="Assert Postcode is Invalid Message" library="checkout_page">
+<status status="PASS" starttime="20240126 01:26:11.447" endtime="20240126 01:26:11.458"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${postcode_id}</arg>
+<arg>${postcode_correct}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:11.467" level="INFO">Typing text '12345' into text field 'id:billing-postcode-field'.</msg>
+<status status="PASS" starttime="20240126 01:26:11.467" endtime="20240126 01:26:11.584"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${save_and_continue_button_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240126 01:26:11.586" level="INFO">Clicking element 'id:checkoutNexBtn'.</msg>
+<status status="PASS" starttime="20240126 01:26:11.584" endtime="20240126 01:26:11.667"/>
+</kw>
+<kw name="Check That Postcode Is Saved" library="checkout_page">
+<status status="PASS" starttime="20240126 01:26:11.667" endtime="20240126 01:26:11.675"/>
+</kw>
+<status status="PASS" starttime="20240126 01:26:10.779" endtime="20240126 01:26:11.675"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240126 01:26:11.681" endtime="20240126 01:26:13.793"/>
+</kw>
+<status status="PASS" starttime="20240126 01:25:20.953" endtime="20240126 01:26:13.793"/>
+</test>
+<status status="PASS" starttime="20240126 01:25:20.807" endtime="20240126 01:26:13.793"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Add Stamps Into Cart And Checkout">Add Stamps Into Cart And Checkout</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240126 01:25:20.921" level="ERROR">Error in file 'C:\Users\david\PycharmProjects\posti_home_assignment_amirkhanova\resources\pages\home_page.robot' on line 6: Processing variable file 'C:\Users\david\PycharmProjects\posti_home_assignment_amirkhanova\resources\variables.yaml' failed: Using YAML variable files requires PyYAML module to be installed. Typically you can install it by running `pip install pyyaml`.</msg>
+<msg timestamp="20240126 01:25:20.937" level="ERROR">Error in file 'C:\Users\david\PycharmProjects\posti_home_assignment_amirkhanova\resources\pages\checkout_page.robot' on line 4: Invalid resource file extension '.py'. Supported extensions are '.json', '.resource', '.rest', '.robot', '.rsrc', '.rst', '.tsv' and '.txt'.</msg>
+</errors>
+</robot>

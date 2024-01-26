@@ -1,0 +1,62 @@
+Test Case 1 -- Add stamps into cart and checkout
+
+1. Navigate to Home Page
+2. Check that, there is a section called "Send Letters With Postcards"
+3. In this section click button "All stamps and envelopes from the online store"
+    Expected:
+        New page is opened.
+        New page title is "Stamps"
+4. Switch to the Stamps Page
+5. In the menu at the left click "Letters and Stamps with €-Value
+    Expected:
+        Items are loaded
+        Page title is "For letters and cards with €-value"
+6. Select 3 stamps and write down their titles and prices
+7. Add each stamp to the cart
+    Expected:
+        Items count at the cart icon on top of the page shows, that there are 3 items there
+8. Click the "Cart" button
+    Expected:
+        Cart page is opened
+        All the cards, that were added in the cart, are displayed correctly, with their titles and prices
+9. Check page Summary for the total prices.
+    Expected:
+        Subtotal = sum of all stamps'prices
+        If subtotal is lower than 45€, delivery fee is 5€. Else it is 0€.
+        Total = subtotal + delivery fee
+10. Return back to the Stamps page
+11. Add another stamp to the cart
+    Expected:
+        Items count at the cart icon on top of the page shows, that there are 4 items there
+12. Click the "Cart" button
+    Expected:
+        Cart page is opened
+        All 4 cards, that were added in the cart, are displayed correctly, with their titles and prices
+        Subtotal, total and delivery fee are re-calculated according to the rules
+13. Click "Checkout" button
+    Expected:
+        Checkout page is opened
+14. Fill up all user information
+15. For the "ZIP/postal" field
+    15.1: Leave the field empty
+        Expected:
+            There is an error message below the field. Text = "Value must be in the following form: NNNNN (where N = number, A = letter and X = number or letter)."
+    15.1: Type postcode, that contains less than 5 numbers
+        Expected:
+            There is an error message below the field. Text = "Value must be in the following form: NNNNN (where N = number, A = letter and X = number or letter)."
+    15.1: Type postcode, that contains more than 5 numbers
+        Expected:
+            There is an error message below the field. Text = "Value must be in the following form: NNNNN (where N = number, A = letter and X = number or letter)."
+    15.1: Type postcode, that contains 5 symbols: numbers and letters
+        Expected:
+            There is an error message below the field. Text = "Value must be in the following form: NNNNN (where N = number, A = letter and X = number or letter)."
+    15.1: Type postcode, that contains 5 symbols: numbers and special symbols
+        Expected:
+            There is an error message below the field. Text = "Value must be in the following form: NNNNN (where N = number, A = letter and X = number or letter)."
+    15.1: Type postcode, that contains 5 numbers
+        Expected:
+            There is no error message
+16. Click "Save and continue" button
+    Expected:
+        User information is saved
+        The latest entered postcode is saved correctly
